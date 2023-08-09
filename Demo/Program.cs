@@ -31,7 +31,7 @@ builder.Services.AddAuthentication(options =>
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer(jwt =>
 {
-    var key = Encoding.ASCII.GetBytes(builder.Configuration.GetSection("JwtConfig").Value);
+    var key = Encoding.ASCII.GetBytes(builder.Configuration.GetSection("JwtConfig").GetSection("secret").Value);
     jwt.SaveToken = true;
     jwt.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
     {

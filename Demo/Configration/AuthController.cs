@@ -53,13 +53,11 @@ namespace Demo.Configration
                     {
                         return BadRequest("Something went wrong");
                     }
-                    
                 }
                 else
                 {
                     return BadRequest("Account Already Exist");
                 }
-                
             }
             else
             {
