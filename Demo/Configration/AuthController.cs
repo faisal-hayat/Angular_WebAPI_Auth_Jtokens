@@ -67,7 +67,9 @@ namespace Demo.Configration
                 return BadRequest("Please Enter all required credentials");
             }   
         }
-
+        
+        [HttpPost]
+        [Route("Login")]
         public async Task<IActionResult> Login([FromBody] UserLoginRequest userLoginRequest)
         {
             if (ModelState.IsValid)
